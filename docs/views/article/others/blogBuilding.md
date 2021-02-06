@@ -2,7 +2,7 @@
 title: 通过vuepress + travis-cl + github pages 搭建个人博客
 date: 2020-02-06
 categories:
- - web基础
+ - 操作教程
 tags:
  - 博客搭建
 ---

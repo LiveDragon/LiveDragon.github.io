@@ -4,7 +4,7 @@
  * @Autor: longyunfei
  * @Date: 2021-02-06 10:59:01
  * @LastEditors: longyunfei
- * @LastEditTime: 2021-02-06 14:51:07
+ * @LastEditTime: 2021-02-06 18:10:56
  */
 module.exports = {
     type: 'blog',
@@ -28,7 +28,7 @@ module.exports = {
     },
     codeTheme: 'tomorrow',
     // 最后更新时间
-    lastUpdated: 'Last Updated', // string | boolean
+    lastUpdated: '上次更新时间', // string | boolean
     // 作者
     author: '龙云飞',
     // 备案号
