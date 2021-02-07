@@ -4,16 +4,12 @@
  * @Autor: longyunfei
  * @Date: 2021-02-04 17:21:36
  * @LastEditors: longyunfei
- * @LastEditTime: 2021-02-06 11:41:46
+ * @LastEditTime: 2021-02-07 10:43:55
 -->
 <template>
   <div class="home-page">
     <div class="head-bg"></div>
-    <!-- <picture>
-        <source srcset="../public/img/bg.webp" type="image/webp">
-        <img src="../public/img/00.jpg"/>
-    </picture> -->
-      <p>测试老大积分</p>
+      <p>测试组件</p>
   </div>
 </template>
 
