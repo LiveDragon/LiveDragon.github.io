@@ -4,7 +4,7 @@
  * @Autor: longyunfei
  * @Date: 2021-02-06 10:59:01
  * @LastEditors: longyunfei
- * @LastEditTime: 2021-02-07 15:00:44
+ * @LastEditTime: 2021-02-07 17:30:10
  */
 module.exports = {
     type: 'blog',
@@ -27,6 +27,23 @@ module.exports = {
       lineNumbers: true, //代码显示行号
     },
     codeTheme: 'tomorrow',
+    visitor: true,
+    AccessNumber: {
+      idVal: 'view'
+    },
+    /**
+     * valine 设置 (if you need valine comment )
+     */
+
+    valineConfig: {
+      appId: 'dudLAxGHJ4XPpmpkAWiqAwwK-gzGzoHsz',// your appId
+      appKey: '4T5PzlNMKa0ESTv1rYluqQAV', // your appKey
+      visitor: true,
+      enableQQ: true,
+      showComment: false,
+      placeholder: '欢迎留下评论'
+    },
+
     // 最后更新时间
     lastUpdated: '上次更新时间', // string | boolean
     // 作者

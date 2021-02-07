@@ -4,7 +4,7 @@
  * @Autor: longyunfei
  * @Date: 2021-02-07 11:35:12
  * @LastEditors: longyunfei
- * @LastEditTime: 2021-02-07 16:06:13
+ * @LastEditTime: 2021-02-07 17:32:18
  */
 module.exports = [
     '@vuepress/medium-zoom',
@@ -28,19 +28,6 @@ module.exports = [
           hideIcon: "/failure.ico",
           hideText: "(●—●)喔哟，崩溃啦！",
           recoverTime: 2000
-        }
-    ],
-    [
-        '@vuepress-reco/comments', 
-        {
-            solution: 'valine',
-            options: {
-                appId: 'dudLAxGHJ4XPpmpkAWiqAwwK-gzGzoHsz',// your appId
-                appKey: '4T5PzlNMKa0ESTv1rYluqQAV', // your appKey
-                placeholder: '欢迎交流 😁～',
-                visitor: true,
-                enableQQ: true
-            }
         }
     ],
     ['@vuepress-reco/vuepress-plugin-bulletin-popover', {
