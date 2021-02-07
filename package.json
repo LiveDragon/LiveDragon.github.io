@@ -2,18 +2,22 @@
   "name": "vuepress-blog",
   "version": "1.0.0",
   "description": "first blog",
+  "author": "longyunfei",
   "main": "index.js",
+  "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
     "serve": "nodemon --ext md,vue --watch .vuepress --watch . --exec vuepress dev docs"
   },
-  "author": "longyunfei",
-  "license": "MIT",
   "devDependencies": {
+    "@vuepress-reco/vuepress-plugin-bulletin-popover": "^1.6.0",
+    "@vuepress-reco/vuepress-plugin-comments": "^1.6.0",
     "nodemon": "^2.0.7",
     "vuepress": "^1.8.0",
+    "vuepress-plugin-cursor-effects": "^1.0.0",
+    "vuepress-plugin-dynamic-title": "^1.0.0",
     "vuepress-theme-reco": "^1.6.1"
   }
 }
