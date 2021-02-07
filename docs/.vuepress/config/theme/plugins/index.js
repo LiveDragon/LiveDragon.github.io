@@ -4,10 +4,11 @@
  * @Autor: longyunfei
  * @Date: 2021-02-07 11:35:12
  * @LastEditors: longyunfei
- * @LastEditTime: 2021-02-07 15:02:37
+ * @LastEditTime: 2021-02-07 16:06:13
  */
 module.exports = [
     '@vuepress/medium-zoom',
+    ['ribbon'],
     // 鼠标点击特效
     [
       "cursor-effects",
@@ -36,6 +37,9 @@ module.exports = [
             options: {
                 appId: 'dudLAxGHJ4XPpmpkAWiqAwwK-gzGzoHsz',// your appId
                 appKey: '4T5PzlNMKa0ESTv1rYluqQAV', // your appKey
+                placeholder: '欢迎交流 😁～',
+                visitor: true,
+                enableQQ: true
             }
         }
     ],
