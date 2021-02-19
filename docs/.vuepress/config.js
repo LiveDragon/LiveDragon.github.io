@@ -4,12 +4,12 @@
  * @Autor: longyunfei
  * @Date: 2021-02-04 15:55:30
  * @LastEditors: longyunfei
- * @LastEditTime: 2021-02-19 17:55:22
+ * @LastEditTime: 2021-02-19 18:06:43
  */
 const themeConfig = require('./config/theme/')
 const plugins = require('./config/theme/plugins/')
 module.exports = {
-    base: '/blog/',
+    base: '/',
     title: '龙云飞',
     description: '若要前行，就要离开你现在停留的地方',
     theme: 'reco',
