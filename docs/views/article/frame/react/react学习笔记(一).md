@@ -1,5 +1,5 @@
 ---
-title: react学习笔记(一)
+title: react基础(一)
 date: 2020-02-19
 comments: false
 categories:
