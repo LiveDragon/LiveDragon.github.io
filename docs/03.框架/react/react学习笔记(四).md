@@ -242,7 +242,99 @@ function ExampleHook() {
     );
 }
 ```
+
+## Ref Hook
+`useRef` 返回一个可变的 ref 对象，其 .current 属性被初始化为传入的参数（initialValue）。返回的 ref 对象在组件的整个生命周期内持续存在。
+### 常规用法
+实例代码：
+```js
+import React, { useState, useEffect, useMemo, useRef } from 'react';
+
+function ExampleHook(props){
+  const [count, setCount] = useState(0);
+
+  const doubleCount = useMemo(() => {
+    return 2 * count;
+  }, [count]);
+
+  const couterRef = useRef();
+
+  useEffect(() => {
+    document.title = `The value is ${count}`;
+    console.log(couterRef.current);
+  }, [count]);
+  
+  return (
+    <>
+      <button ref={couterRef} onClick={() => {setCount(count + 1)}}>Count: {count}, double: {doubleCount}</button>
+    </>
+  );
+}
+```
+上述代码使用`useRef`可以创建一个对象couterRef，将这个对象赋给组件的ref属性，就可以通过该对象的current属性访问`DOM`元素button
+
+### 跨渲染周期保存数据
+一般我们将组件的状态属性放在`state`中保存，但当我们改变`state`中的属性时，就会触发组件重新渲染。如果我们有更新数据而不触发组件重新渲染的需求时，就可以使用`userRef`来跨越渲染周期存储数据。
+``` js
+import React, { useState, useEffect, useMemo, useRef } from 'react';
+
+function ExampleHook(props){
+  const [count, setCount] = useState(0);
+
+  const doubleCount = useMemo(() => {
+    return 2 * count;
+  }, [count]);
+
+  const timerID = useRef();
+  
+  useEffect(() => {
+    timerID.current = setInterval(()=>{
+        setCount(count => count + 1);
+    }, 1000); 
+  }, []);
+  
+  useEffect(()=>{
+      if(count > 10){
+          clearInterval(timerID.current);
+      }
+  });
+  
+  return (
+    <>
+      <button ref={couterRef} onClick={() => {setCount(count + 1)}}>Count: {count}, double: {doubleCount}</button>
+    </>
+  );
+}
+```
+这里用ref对象的current属性来存储定时器的ID，这样便可以在多次渲染之后依旧保存定时器ID，从而能正常清除定时器。同时这里出现了一个新的hook`useMemo`,我们下面说。
+
 ## 其他Hook
+### useMemo
+这里承接上面代码的`useMemo`。
+
+官网定义：函数返回一个 memoized 值。把“创建”函数和依赖项数组作为参数传入 useMemo，它仅会在某个依赖项改变时才重新计算 memoized 值。这种优化有助于避免在每次渲染时都进行高开销的计算。
+
+总结一下就是：这个hook的功能是判断组件中的函数逻辑是否重新执行，用来优化性能。
+``` js
+  //第一个参数是要执行的函数
+  //第二个参数是执行函数依赖的变量组成的数据
+  //这里只有count发生变化double才会重新计算
+const doubleCount = useMemo(() => {
+    return 2 * count;
+  }, [count]);
+```
+上述代码，只有当count的值发生改变了，doubleCount才会重新渲染，感觉有点类似vue中的computed属性。
+可以将代码稍微改变一下
+``` js
+const doubleCount = useMemo(() => {
+    return 2 * count;
+  }, [count === 3]);
+
+```
+这样的话只有当count的值为3时，doubleCount才会重新渲染。
+
+综上，只有当满足传入函数中第二个参数（依赖项数组）的条件满足时，这个hook创建的数据才能够被更改，减少频繁渲染来优化性能。
+
 ### useContext
 可以让你不使用组件嵌套就可以订阅 React 的 Context。
 ``` js

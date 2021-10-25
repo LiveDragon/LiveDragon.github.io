@@ -17,7 +17,7 @@ module.exports = [
       showIcon: "/favicon.ico",
       showText: "(*╹▽╹*)欢迎回来：",
       hideIcon: "/cursor.ico",
-      hideText: "浏览器即将爆炸，快回来",
+      hideText: "(●—●)!网页即将崩溃，快回来!",
       recoverTime: 2000
     }
   ],
